@@ -1,0 +1,36 @@
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+# Looks best on a black background.....
+echo
+echo -e "${CYAN}This is BASH ${BASH_VERSION%.*} - DISPLAY on "$DISPLAY"${NC}"
+date
+echo
+if [ -x /usr/games/fortune ]; then 
+    /usr/games/fortune     # makes our day a bit more fun.... :-)
+    echo
+fi
+
+# PATH additions
+# my bin
+export PATH="~:~/bin:${PATH}"
+# Setting PATH for EPD 4.0.30001
+export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+# MPICH
+export PATH="/usr/local/mpich2/bin:${PATH}"
+# CUDA
+export PATH="/usr/local/cuda/bin:${PATH}"
+# qmake
+export PATH="/usr/lib64/qt4/bin:${PATH}"
+#
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
+#
+export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
+
+export PYTHON_PATH="~/install/ase:${PYTHON_PATH}"
+export PYTHONSTARTUP="~/.pystart"
+export PATH="~/install/ase/tools:${PATH}"
